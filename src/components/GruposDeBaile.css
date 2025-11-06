@@ -1,0 +1,321 @@
+.grupos-container {
+    background-color: #071323;
+    color: #ffd300;
+    padding: 2rem;
+    text-align: center;
+}
+
+.planetas {
+    position: relative;
+    height: 300px;
+    margin: 2rem 0;
+}
+
+h3 {
+    color: #ffd300;
+}
+
+.planeta {
+    position: absolute;
+    width: 100px;
+    transition: transform 1s ease-out, top 1s ease-out, left 1s ease-out, opacity 1s ease-out;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+/* Título */
+h2.tituloGrupos {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: left;
+    gap: 10px;
+    font-weight: bold;
+}
+
+/* POSICIONES DE 5 ELEMENTOS */
+
+/* Muy izquierda (pequeño) */
+.pos0 {
+    left: 25%;
+    top: 5%;
+    transform: translate(-50%, -50%) scale(0.8);
+    z-index: 1;
+}
+
+.pos0:hover {
+    cursor: default;
+}
+
+
+/* Izquierda */
+.pos1 {
+    left: 15%;
+    top: 40%;
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 2;
+}
+
+
+
+/* Centro (grande) */
+.pos2 {
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -50%) scale(5);
+    opacity: 1;
+    z-index: 5;
+}
+
+/* Derecha */
+.pos3 {
+    left: 85%;
+    top: 40%;
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 2;
+}
+
+/* Muy derecha (pequeño) */
+.pos4 {
+    left: 75%;
+    top: 5%;
+    transform: translate(-50%, -50%) scale(0.8);
+    z-index: 1;
+}
+
+.pos4:hover {
+    cursor: default;
+}
+
+/* Flechas */
+.flecha-izquierda,
+.flecha-derecha {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.flecha-izquierda {
+    left: -3%;
+}
+
+.flecha-derecha {
+    right: -3%;
+}
+
+.info-grupo {
+    padding: 1.5rem;
+    border-radius: 10px;
+    color: white;
+    max-width: 600px;
+    margin: 0 auto;
+    z-index: 100;
+}
+
+button {
+    margin-top: 0rem;
+    background-color: #ffd300;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #071323;
+}
+
+.btn-acceder {
+    position: absolute;
+    right: 42%;
+    top: 80%;
+    z-index: 10;
+    background-color: #ffd300;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #071323;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background-color: #000000;
+    color: #ffd300;
+}
+
+/* ======= Responsive Grupos (tablet y móvil) ======= */
+
+/* Tablet: compacta un poco el escenario y el “planeta central” */
+@media (max-width: 1024px) {
+    .grupos-container {
+        padding: 1.5rem 1rem;
+        overflow-x: hidden;
+    }
+
+    h2.tituloGrupos {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .planetas {
+        height: 240px;
+    }
+
+    .planeta {
+        width: 84px;
+        opacity: .7;
+    }
+
+    /* reduce escalado del centro en tablet */
+    .pos2 {
+        top: 90%;
+        transform: translate(-50%, -50%) scale(2.2);
+    }
+
+    /* flechas más dentro y un poco más pequeñas */
+    .flecha-izquierda {
+        left: 6px;
+    }
+
+    .flecha-derecha {
+        right: 6px;
+    }
+
+    .flecha-izquierda,
+    .flecha-derecha {
+        font-size: 1.8rem;
+    }
+
+    /* botón acceder un poco más cercano al centro */
+    .btn-acceder {
+        right: 50%;
+        transform: translateX(50%);
+        top: 78%;
+    }
+}
+
+/* Móvil: distribución en arco compacto, botones touch-friendly */
+@media (max-width: 768px) {
+    .grupos-container {
+        padding: 1.25rem .75rem;
+    }
+
+    h2.tituloGrupos {
+        font-size: 1.8rem;
+    }
+
+    .planetas {
+        height: 220px;
+        overflow: visible;
+    }
+
+    .planeta {
+        width: 120px;
+        /* más pequeñas */
+        opacity: .8;
+        transition: transform .45s ease, top .45s ease, left .45s ease, opacity .3s;
+    }
+
+    /* Reposicionamiento compacto (arco) */
+    .pos0 {
+        left: 30%;
+        top: 7%;
+        transform: translate(-50%, -50%) scale(.70);
+        z-index: 1;
+    }
+
+    .pos1 {
+        left: 20%;
+        top: 40%;
+        transform: translate(-50%, -50%) scale(1);
+        z-index: 2;
+    }
+
+    .pos2 {
+        left: 50%;
+        top: 80%;
+        transform: translate(-50%, -50%) scale(3.5);
+        z-index: 5;
+        opacity: 1;
+    }
+
+    .pos3 {
+        left: 80%;
+        top: 40%;
+        transform: translate(-50%, -50%) scale(1);
+        z-index: 2;
+    }
+
+    .pos4 {
+        left: 70%;
+        top: 7%;
+        transform: translate(-50%, -50%) scale(0.70);
+        z-index: 1;
+    }
+
+    /* flechas pegadas al borde y centradas */
+    .flecha-izquierda,
+    .flecha-derecha {
+        top: 48%;
+        font-size: 1.6rem;
+        padding: .25rem .5rem;
+    }
+
+    .flecha-izquierda {
+        left: 4px;
+    }
+
+    .flecha-derecha {
+        right: 4px;
+    }
+
+    /* info y botones: apilar y 100% de ancho */
+    .info-grupo {
+        max-width: 100%;
+        padding: 1rem;
+        text-align: left;
+    }
+
+    .btn-acceder {
+        position: static;
+        /* deja de ser absoluta */
+        transform: none;
+        margin: .75rem auto 0;
+        width: 100%;
+        max-width: 420px;
+        display: block;
+        border-radius: 10px;
+    }
+
+    /* botones: más “tap-friendly” */
+    button,
+    .btn-acceder {
+        padding: .8rem 1rem;
+        font-size: 1rem;
+    }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 420px) {
+    .planetas {
+        height: 200px;
+    }
+
+    .planeta {
+        width: 64px;
+    }
+
+    .pos2 {
+        top: 80%;
+        transform: translate(-50%, -50%) scale(3.5);
+    }
+
+    h2.tituloGrupos {
+        font-size: 1.6rem;
+    }
+}

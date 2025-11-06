@@ -1,0 +1,174 @@
+.carrusel-profesores {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 2rem;
+    font-family: sans-serif;
+}
+
+h2.tituloProfesores {
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: left;
+    gap: 10px;
+    font-weight: bold;
+}
+
+/* Contenedor principal del carrusel */
+.carruselProf-contenido {
+    position: relative;
+    /* permite posicionar flechas pegadas al borde */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Pista de tarjetas */
+.tarjetas {
+    display: flex;
+    gap: 1rem;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1100px;
+    /* limita ancho para que se vea como en la captura */
+    justify-content: center;
+}
+
+/* Tarjeta: tamaño pensado para 4 visibles en desktop */
+.tarjetaProf {
+    flex: 0 0 23%;
+    max-width: 260px;
+    height: 300px;
+    background: #d4d4d4;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.tarjetaProf img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.4s ease;
+}
+
+.tarjetaProf p {
+    margin: 0.5rem;
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+}
+
+/* contenedor imagen + overlay */
+.imagen-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* overlay que sube al hover */
+.descripcion-slide {
+    position: absolute;
+    inset: 0 0 0 0;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 1rem;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.descripcion-slide h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.descripcion-slide p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* hover: mostrar overlay y atenuar imagen */
+.tarjetaProf:hover .descripcion-slide {
+    transform: translateY(0);
+}
+
+.tarjetaProf:hover img {
+    opacity: 0.2;
+}
+
+/* Flechas pegadas al borde y centradas verticalmente */
+.flecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #222;
+    padding: 0 .6rem;
+    line-height: 1;
+}
+
+.flecha[aria-label="Anterior"] {
+    left: 25px;
+}
+
+.flecha[aria-label="Siguiente"] {
+    right: 25px;
+}
+
+/* Botón "ver todos" si lo usas (no cambia) */
+.ver-todos {
+    margin-top: 1.5rem;
+    padding: 0.5rem 1.2rem;
+    border: 2px solid #222;
+    background-color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.ver-todos:hover {
+    background-color: #222;
+    color: white;
+}
+
+/* ===== Responsive: móvil (2 visibles) ===== */
+@media (max-width: 768px) {
+    h2.tituloProfesores {
+        font-size: 1.8rem;
+    }
+
+    .tarjetas {
+        max-width: 100%;
+    }
+
+    .tarjetaProf {
+        flex: 0 0 48%;
+        max-width: none;
+        height: 260px;
+    }
+
+    .flecha {
+        font-size: 1.6rem;
+        padding: 0 .4rem;
+    }
+
+    .flecha[aria-label="Anterior"] {
+        left: -20px;
+    }
+
+    .flecha[aria-label="Siguiente"] {
+        right: -20px;
+    }
+
+}

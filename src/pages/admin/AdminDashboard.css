@@ -1,0 +1,66 @@
+.admin-dash {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 16px;
+}
+
+.admin-dash__header h1 {
+    margin: 0 0 6px 0;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.admin-dash__header .muted {
+    color: #667085;
+    margin: 0 0 18px 0;
+}
+
+.admin-dash__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+.admin-card {
+    display: block;
+    border: 1px solid #e5e7eb;
+    /* gris claro */
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.2s ease, transform 0.1s ease, border-color 0.2s ease;
+}
+
+.admin-card:hover {
+    border-color: #d4d4d8;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+}
+
+.admin-card__title {
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 16px;
+}
+
+.admin-card__desc {
+    font-size: 14px;
+    color: #6b7280;
+    /* gris */
+}
+
+/* Pequeños retoques para el saludo en el header si quieres afinarlos aquí también */
+.salida,
+.saludo {
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+/* Por si tu Header.css no lo tiene aún */
+.perfil-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}

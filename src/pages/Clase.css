@@ -1,0 +1,50 @@
+.boton:hover {
+    color: yellow;
+
+}
+
+/* Portada de la clase */
+.clase-portada {
+    width: 100%;
+    max-height: 260px;
+    /* más pequeña también en PC */
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .25);
+}
+
+/* Contenedor del reproductor */
+.clase-video {
+    width: 100%;
+    max-width: 1200px;
+    /* ancho generoso en desktop */
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .3);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 992px) {
+    .clase-portada {
+        max-height: 200px;
+        /* portada más compacta en tablet */
+    }
+
+    .clase-video {
+        max-width: 100%;
+        /* vídeo ocupa todo el ancho disponible */
+    }
+}
+
+@media (max-width: 576px) {
+    .clase-portada {
+        max-height: 160px;
+        border-radius: 8px;
+    }
+
+    .clase-video {
+        border-radius: 8px;
+    }
+}

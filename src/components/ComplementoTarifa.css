@@ -1,0 +1,53 @@
+.complemento-tarifa-container {
+    background-color: #071323;
+    color: white;
+    padding: 2rem;
+    border: 2px solid #00aaff;
+    border-radius: 10px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.planes-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.plan-card {
+    background-color: #0c2035;
+    border: 1px solid white;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 150px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.plan-card:hover {
+    transform: scale(1.05);
+}
+
+.plan-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.plan-info {
+    padding: 0.5rem;
+    background-color: black;
+}
+
+.plan-info h4 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.plan-info .precio {
+    margin: 0.5rem 0 0;
+    font-weight: bold;
+    font-size: 1.1rem;
+}

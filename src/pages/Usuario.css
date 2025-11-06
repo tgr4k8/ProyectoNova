@@ -1,0 +1,207 @@
+/* Página base */
+.usuario-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+/* Título */
+.usuario-title {
+    margin: 0 0 12px;
+    font-size: 26px;
+    font-weight: 800;
+}
+
+/* Tarjeta de perfil */
+.perfil-card {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    background: #0c1626;
+    color: #fff;
+}
+
+.perfil-left {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.perfil-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #ffd54d;
+}
+
+.perfil-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.perfil-name {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.perfil-email {
+    font-size: 14px;
+    opacity: .85;
+    margin-top: 2px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.verify-badge {
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 999px;
+}
+
+.verify-badge.ok {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.verify-badge.no {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.perfil-meta {
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+}
+
+.chip {
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-size: 12px;
+}
+
+.chip.role {
+    background: rgba(255, 255, 255, .08);
+}
+
+.chip.points {
+    background: #ffd54d;
+    color: #000;
+    font-weight: 700;
+}
+
+.perfil-sub {
+    margin-top: 10px;
+}
+
+.sub-head {
+    font-size: 12px;
+    opacity: .75;
+    margin-bottom: 4px;
+}
+
+.sub-dates {
+    display: flex;
+    gap: 16px;
+    font-size: 14px;
+}
+
+.chip.sub-none {
+    background: rgba(255, 255, 255, .08);
+}
+
+/* Panel contenedor genérico */
+.panel {
+    background: #0c1626;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 16px;
+}
+
+/* ===== Full-bleed para que el panel ocupe TODA la pantalla ===== */
+.panel-full {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+/* Fondo azul oscuro “como antes” */
+.panel-dark {
+    background: #071323;
+}
+
+/* Cabeceras y utilidades */
+.panel-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.link {
+    background: transparent;
+    border: none;
+    color: #ffd54d;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.muted {
+    opacity: .65;
+}
+
+/* Botones/inputs carga de foto */
+.upload-label {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.upload-label input {
+    display: none;
+}
+
+.btn-yellow {
+    background: #ffd54d;
+    color: #000;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.btn-yellow.outline {
+    background: transparent;
+    color: #ffd54d;
+    border: 1px solid #ffd54d;
+}
+
+.hint {
+    font-size: 12px;
+    opacity: .8;
+    margin-top: 4px;
+}
+
+.ok {
+    color: #22c55e;
+    margin-top: 4px;
+    font-size: 13px;
+}
+
+.error {
+    color: #ef4444;
+    margin-top: 4px;
+    font-size: 13px;
+}

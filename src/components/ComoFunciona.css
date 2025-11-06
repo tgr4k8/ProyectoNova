@@ -1,0 +1,44 @@
+.step-circle {
+    width: 60px;
+    height: 60px;
+    background-color: #212529;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.active-step {
+    background-color: #ffd300;
+    color: black;
+    transform: scale(1.1);
+}
+
+.steps-wrapper .flex-fill {
+    max-width: 25%;
+}
+
+.expandible {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+}
+
+.expandible .contenido-inner {
+    padding: 10px;
+    opacity: 1;
+}
+
+.expandible:not(:empty) {
+    opacity: 1;
+}
+
+.btn-alert:hover {
+    background-color: black;
+    color: #ffd300;
+}

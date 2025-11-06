@@ -1,0 +1,112 @@
+/* =========================
+   Base reset + Mobile fixes
+   ========================= */
+html {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  /* evita zoom automático de iOS */
+  text-size-adjust: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  /* corta cualquier overflow horizontal global */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  min-width: 0;
+  /* evita desbordes en flex items */
+}
+
+body {
+  margin: 0;
+  /* elimina márgenes por defecto */
+  max-width: 100%;
+  overflow-x: hidden;
+  /* sin scroll lateral */
+}
+
+img,
+video,
+canvas,
+svg,
+iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  /* que nunca crezcan más que el contenedor */
+}
+
+/* iOS hace zoom si inputs < 16px: forzamos 16px */
+input,
+select,
+textarea {
+  font-size: 16px;
+}
+
+/* Botones/inputs heredan tipografía del sitio */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* ==================================
+   Tu CSS existente (ajustado intacto)
+   ================================== */
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 50vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: auto;
+}
+
+/* Separación del contenido respecto al header fijo */
+.main-content {
+  padding-top: 0;
+}
+
+/* En pantallas pequeñas, reducimos un poco el padding-top
+   por si el header es más compacto */
+@media (max-width: 480px) {
+  .main-content {
+    padding-top: 0;
+  }
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

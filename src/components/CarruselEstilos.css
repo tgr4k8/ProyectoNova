@@ -1,0 +1,153 @@
+/* CONTENEDOR */
+.carrusel-estilos {
+    text-align: center;
+    background-color: #f1f1f1;
+    padding: 2rem;
+    font-family: sans-serif;
+}
+
+h2.tituloEstilos {
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: left;
+    gap: 10px;
+    font-weight: bold;
+}
+
+/* LAYOUT DEL CARRUSEL */
+.carrusel-contenido {
+    position: relative;
+    /* para posicionar flechas */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* PISTA (track) */
+.tarjetas {
+    display: flex;
+    gap: 1rem;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1100px;
+    /* limitar ancho para estética desktop */
+    justify-content: center;
+}
+
+/* TARJETA (item) — 4 visibles en desktop */
+.tarjeta {
+    flex: 0 0 23%;
+    max-width: 260px;
+    height: 200px;
+    background: #d4d4d4;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+    overflow: hidden;
+    position: relative;
+    transition: transform .25s ease;
+}
+
+/* IMAGEN */
+.tarjeta img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity .35s ease;
+    display: block;
+}
+
+/* OVERLAY SLIDE UP */
+.imagen-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.descripcion-slide {
+    position: absolute;
+    inset: 0 0 0 0;
+    background: rgba(0, 0, 0, .85);
+    color: #fff;
+    padding: 1rem;
+    transform: translateY(100%);
+    transition: transform .35s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.descripcion-slide h3 {
+    margin-bottom: .5rem;
+    font-size: 1.1rem;
+}
+
+.descripcion-slide p {
+    margin: 0;
+    font-size: .95rem;
+}
+
+/* HOVER: mostrar overlay y atenuar imagen */
+.tarjeta:hover .descripcion-slide {
+    transform: translateY(0);
+}
+
+.tarjeta:hover img {
+    opacity: .2;
+}
+
+/* FLECHAS a borde y centradas */
+.flecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: #222;
+    padding: 0 .6rem;
+    line-height: 1;
+    z-index: 2;
+}
+
+.flecha[aria-label="Anterior"] {
+    left: 25px;
+}
+
+.flecha[aria-label="Siguiente"] {
+    right: 25px;
+}
+
+/* ===== MÓVIL: 2 visibles y un poco más bajas ===== */
+@media (max-width: 768px) {
+    h2.tituloEstilos {
+        font-size: 1.8rem;
+    }
+
+    .tarjetas {
+        max-width: 100%;
+    }
+
+    .tarjeta {
+        flex: 0 0 48%;
+        max-width: none;
+        height: 170px;
+    }
+
+    .flecha {
+        font-size: 1.3rem;
+        padding: 0 .4rem;
+    }
+
+    .flecha[aria-label="Anterior"] {
+        left: -20px;
+    }
+
+    .flecha[aria-label="Siguiente"] {
+        right: -20px;
+    }
+}

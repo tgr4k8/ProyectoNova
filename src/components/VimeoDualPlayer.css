@@ -1,0 +1,89 @@
+/* Contenedor global */
+.vdp-wrap {
+    width: 100%;
+    position: relative;
+}
+
+/* Barra de controles */
+.vdp-controls {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.vdp-btn {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 0;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.vdp-btn-primary {
+    background: #ffd54a;
+    color: #1a1a1a;
+}
+
+.vdp-btn-dark {
+    background: #0e1828;
+    color: #fff;
+}
+
+.vdp-message {
+    padding: 10px;
+    color: #fff;
+    background: #ff5252;
+    border-radius: 6px;
+}
+
+/* ESCENARIO DEL VÍDEO: ahora se ajusta SIEMPRE al ratio del vídeo */
+.vdp-stage {
+    position: relative;
+    width: 100%;
+    aspect-ratio: var(--vdp-ratio, 16 / 9);
+    /* <- clave: el ratio lo pone el JS */
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    /* evita barras/scrolls y permite cubrir */
+}
+
+/* Capas (front/back) apiladas */
+.vdp-layer {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s ease;
+}
+
+.vdp-layer--active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Contenedor del iframe: ocupa SIEMPRE 100% del stage */
+.vdp-player {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* El iframe llena todo el contenedor */
+.vdp-player iframe {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: 0 !important;
+}
+
+/* Fullscreen del contenedor (opcional) */
+.vdp-wrap.fullscreen,
+.vdp-stage.fullscreen {
+    width: 100vw;
+    height: 100vh;
+    aspect-ratio: auto;
+    border-radius: 0;
+}

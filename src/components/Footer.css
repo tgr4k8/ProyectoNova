@@ -1,0 +1,195 @@
+/* ===== NOVA Footer ===== */
+.nova-footer.bg-dark {
+    --bg: #071323;
+    --fg: #ffffff;
+    --muted: #cfd6e4;
+    --accent: #ffd300;
+
+    background: var(--bg) !important;
+    color: var(--fg) !important;
+    font-family: 'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
+}
+
+.nova-footer .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-inline: 16px;
+}
+
+/* Grid responsivo que imita la captura: 4 columnas equilibradas */
+.nova-footer .row {
+    display: grid !important;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    /* logo un pelín más ancho */
+    gap: 50px;
+}
+
+/* Anula márgenes/paddings de Bootstrap dentro del grid */
+.nova-footer .col-md-3 {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Tipografías */
+.nova-footer h2,
+.nova-footer h5 {
+    margin: 0 0 10px 0;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.nova-footer h2 {
+    font-size: clamp(1.6rem, 1.1rem + 1.4vw, 2.2rem);
+    letter-spacing: .4px;
+}
+
+.nova-footer h2 .text-warning {
+    color: var(--accent) !important;
+}
+
+.nova-footer h5 {
+    font-size: 1.05rem;
+    color: var(--fg);
+    /* títulos de columna */
+}
+
+/* Párrafos */
+.nova-footer .foot-subtitle {
+    margin: 0 0 6px 0;
+    color: var(--fg);
+}
+
+.nova-footer .foot-paragraph {
+    margin: 0;
+    color: var(--muted);
+}
+
+/* Listas */
+.nova-footer .foot-list,
+.nova-footer .contact-list,
+.nova-footer .social-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 6px;
+}
+
+/* Enlaces del menú */
+.nova-footer a {
+    color: var(--fg) !important;
+    text-decoration: none !important;
+    font-weight: 600;
+    /* antes 700 */
+    letter-spacing: 0.2px;
+    transition: color .2s ease, opacity .2s ease, transform .2s ease;
+}
+
+.nova-footer a:hover {
+    color: var(--accent) !important;
+    opacity: .95;
+}
+
+/* Filas de contacto y redes con icono alineado */
+.nova-footer .contact-list li,
+.nova-footer .social-list li {
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    /* reserva fija para el icono */
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+/* Iconos Bootstrap */
+.nova-footer .bi {
+    font-size: 1rem;
+    color: var(--accent);
+    line-height: 1;
+}
+
+/* Espaciado vertical general del bloque */
+.nova-footer.py-5 {
+    padding-block: 38px !important;
+}
+
+/* ====== Responsive ====== */
+
+/* Tablet: mantiene estructura limpia en 2 columnas */
+@media (max-width: 992px) {
+    .nova-footer .row {
+        grid-template-columns: 1.2fr 1fr;
+        gap: 28px 22px;
+    }
+}
+
+/* Móvil: 1 columna (mismo look, sin romper) */
+@media (max-width: 576px) {
+    .nova-footer .row {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .nova-footer .container {
+        padding-inline: 14px;
+    }
+
+    /* Alineación a la izquierda como en el diseño */
+    .nova-footer h2,
+    .nova-footer h5,
+    .nova-footer p,
+    .nova-footer ul {
+        text-align: left;
+    }
+
+    /* Tocabilidad en enlaces de menú */
+    .nova-footer .foot-list a {
+        display: inline-block;
+        padding: 4px 0;
+    }
+}
+
+/* ===== Ajustes desktop extra (≥ 1200px) ===== */
+@media (min-width: 1200px) {
+
+    /* Más ancho total para que no se apelmace */
+    .nova-footer .container {
+        max-width: 1320px;
+        /* antes 1140px */
+    }
+
+    /* Columnas más anchas y con mínimos */
+    .nova-footer .row {
+        grid-template-columns: minmax(320px, 2fr) repeat(3, minmax(220px, 1fr));
+        column-gap: 56px;
+        align-items: start;
+    }
+
+    /* Evita que algo fuerce saltos raros */
+    .nova-footer .row>* {
+        min-width: 0;
+    }
+
+    /* Parrafada inicial más legible */
+    .nova-footer .foot-paragraph {
+        max-width: 46ch;
+        line-height: 1.5;
+    }
+
+    /* Listas más aireadas */
+    .nova-footer .foot-list,
+    .nova-footer .contact-list,
+    .nova-footer .social-list {
+        gap: 8px;
+    }
+}
+
+/* Ajustes logo-col opcional */
+.nova-footer .logo-col h2 {
+    margin-bottom: 10px;
+}
+
+.nova-footer .logo-col .foot-subtitle {
+    margin-bottom: 6px;
+}

@@ -1,0 +1,88 @@
+.grupos-container1 {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fff;
+
+}
+
+.descripcion-texto {
+    max-width: 800px;
+    margin-bottom: 2rem;
+
+}
+
+.filtro-busqueda {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+}
+
+.filtro-busqueda input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.filtro-busqueda button {
+    padding: 0.75rem 1.5rem;
+    background-color: #fff;
+    border: 2px solid #071323;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filtro-busqueda button:hover {
+    background-color: #ffd300;
+    color: #071323;
+    border-color: #ffd300;
+}
+
+.lista-estilos {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.estilo-card {
+    display: flex;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    overflow: hidden;
+    align-items: center;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+
+.estilo-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.estilo-card img {
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+}
+
+.estilo-card .contenido {
+    flex: 1;
+    padding: 1rem;
+}
+
+.estilo-card h3 {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #071323;
+}
+
+.estilo-card .flecha {
+    font-size: 2rem;
+    padding: 1rem;
+    color: #071323;
+}

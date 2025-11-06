@@ -1,0 +1,274 @@
+/* ====== Variables y base (scope local a esta página) ====== */
+.admin-forms {
+    --fg: #0b1a2a;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --accent: #ffd300;
+    --accent-ink: #000;
+    --card-bg: #ffffff;
+    --soft-shadow: 0 10px 24px rgba(0, 0, 0, .08);
+    color: var(--fg);
+    font-family: 'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
+}
+
+/* Contenedor */
+.admin-forms {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 16px 40px;
+}
+
+/* Título */
+.admin-forms h1 {
+    font-size: clamp(1.4rem, 1.2rem + 1.2vw, 2rem);
+    margin: 0 0 16px;
+    font-weight: 800;
+}
+
+/* ====== Formulario ====== */
+.admin-forms form {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--soft-shadow);
+    padding: 16px;
+    display: grid;
+    /* tu JSX ya lo tiene, lo refuerzo aquí */
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+/* Campo genérico (cada <div> que envuelve label+input) */
+.admin-forms form>div {
+    display: grid;
+    gap: 6px;
+}
+
+/* Etiquetas */
+.admin-forms label {
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+/* Inputs y textarea */
+.admin-forms input[type="text"],
+.admin-forms input[type="url"],
+.admin-forms input[type="email"],
+.admin-forms input[type="password"],
+.admin-forms textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #fff;
+    color: var(--fg);
+    outline: none;
+    transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+    font-size: 16px;
+    /* evita zoom de iOS */
+}
+
+.admin-forms textarea {
+    resize: vertical;
+}
+
+/* Focus */
+.admin-forms input:focus,
+.admin-forms textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(255, 211, 0, .25);
+}
+
+/* Hint pequeño (tu <small>) */
+.admin-forms small {
+    color: var(--muted);
+    display: inline-block;
+    margin-top: 4px;
+}
+
+/* Preview de imagen (selecciona el <img alt="preview"> que ya usas) */
+.admin-forms img[alt="preview"] {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #f8fafc;
+    padding: 4px;
+}
+
+/* Botón principal */
+.admin-forms button[type="submit"] {
+    background: var(--accent);
+    color: var(--accent-ink);
+    border: none;
+    border-radius: 10px;
+    font-weight: 800;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, .10);
+}
+
+.admin-forms button[type="submit"]:hover {
+    background: #000;
+    color: var(--accent);
+    transform: translateY(-1px);
+}
+
+/* Mensajes (si quieres usarlos más adelante con clases) */
+.admin-forms .msg-ok {
+    color: #0ea5e9;
+    font-weight: 700;
+}
+
+.admin-forms .msg-error {
+    color: #dc2626;
+    font-weight: 700;
+}
+
+.admin-forms table {
+    width: 150%;
+    border-collapse: collapse;
+}
+
+/* ====== Grid agradable en pantallas medianas/grandes ====== */
+@media (min-width: 768px) {
+    .admin-forms form {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        padding: 20px;
+    }
+
+    /* 1) Nombre, 2) Clave, 3) Nivel, 4) URL imagen en dos columnas
+     5) Descripción ocupa todo el ancho
+     (orden según tu JSX actual) */
+    .admin-forms form>div:nth-child(5) {
+        grid-column: 1 / -1;
+    }
+
+    /* Botón submit alineado a la izquierda y a todo el ancho del grid */
+    .admin-forms form>button[type="submit"] {
+        grid-column: 1 / -1;
+        justify-self: start;
+    }
+}
+
+/* ====== Lista de grupos ====== */
+.admin-forms hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px 0;
+}
+
+.admin-forms h2 {
+    margin: 0 0 12px;
+    font-size: clamp(1.1rem, 1rem + .6vw, 1.4rem);
+    font-weight: 800;
+}
+
+/* Si mantienes tu <ul> con inline-styles, esto añade mejoras visuales
+   sin romper tu layout actual */
+.admin-forms ul {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    gap: 12px;
+}
+
+.admin-forms ul li {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--soft-shadow);
+}
+
+.admin-forms ul li img {
+    border-radius: 8px;
+    background: #f8fafc;
+    border: 1px solid var(--border);
+}
+
+/* Botón eliminar (si decides quitar inline-styles en el futuro) */
+.admin-forms .btn-eliminar {
+    background: #dc2626;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.admin-forms .btn-eliminar:hover {
+    background: #b91c1c;
+}
+
+.admin-forms select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #fff;
+    color: var(--fg);
+    font-size: 16px;
+}
+
+.admin-forms select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(255, 211, 0, .25);
+    outline: none;
+}
+
+.admin-form select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #fff;
+    color: var(--fg);
+    font-size: 16px;
+}
+
+.admin-form select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(255, 211, 0, .25);
+    outline: none;
+}
+
+/* Botón genérico */
+.admin-form .btn {
+    background: var(--accent);
+    color: var(--accent-ink);
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: background .2s, color .2s, transform .15s;
+}
+
+.admin-form .btn:hover {
+    background: #000;
+    color: var(--accent);
+    transform: translateY(-1px);
+}
+
+/* Variante peligrosa (eliminar/rechazar) */
+.admin-form .btn-danger {
+    background: #dc2626;
+    color: #fff;
+}
+
+.admin-form .btn-danger:hover {
+    background: #b91c1c;
+    color: #fff;
+}
+
+/* ====== Responsive estrecho ====== */
+@media (max-width: 420px) {
+    .admin-forms {
+        padding-inline: 12px;
+    }
+
+    .admin-forms form {
+        padding: 14px;
+    }
+}
